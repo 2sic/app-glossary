@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="@App.Path/assets/style.css" />
+@{
+    var entries = AsDynamic(Data["Default"]);
+    var detailPage = App.Settings.DetailPage;
+    //var lib = CreateInstance("_library.cshtml");
+    string[] Letters = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q","R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+
+}
+
+<div class="ly-maxwrapper-white">
+    <div class="container-fluid">
+        <div class="ly-container-inner">
+            <div class="sc-element">
+                <div class="app-glossary ly-maxwrapper-white">
+                    @Edit.Toolbar(Content)
+                    <div class="app-glossary-letterlist">
+                        <ul>
+                        @foreach(string i in Letters){
+                            <li>
+                                <a href="#@i">@i</a>  
+                            </li>
+                        }
+                        </ul>
+                    </div>
+
+                
+                    <div class="app-glossary-entries">
+                        @foreach(var e in entries){
+                            //@if(){}
+                            
+                            <span id="A">A</span>
+                            <div class="sc-element">
+                                <strong>@e.Title</strong>
+                                <p>@e.Summary</p>
+                                @Edit.Toolbar(e)
+                                @{ 
+                                    var link = detailPage + "/key/" + e.UrlKey;
+                                } 
+                                <a href="@link">mehr erfahren</a>
+                        </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

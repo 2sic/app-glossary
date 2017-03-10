@@ -1,0 +1,23 @@
+@{
+    var paramUrlKey = Request.QueryString["key"];
+    //var entry = AsDynamic(App.Data["Entry"]).Where(x => x.UrlKey == paramUrlKey).ToList();
+    
+    var entry = AsDynamic(App.Data["Entry"]).FirstOrDefault();
+    var firstLetter = entry.Title[0];
+
+}
+<div class="ly-maxwrapper-white">
+    <div class="container-fluid">
+        <div class="ly-container-inner">
+            <div class="sc-element">
+                <h1>@entry.Abbreviation + @entry.Title</h1>
+                <p><strong>@entry.Summary</strong></p>
+                <p>@Html.Raw(entry.Details)</p>
+
+                <a href="#@firstLetter" class="btn btn-primary btn-sm">
+                    <i class="fa fa-angle-left"></i>   @App.Resources.GoBackText
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
