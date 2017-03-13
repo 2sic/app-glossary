@@ -1,23 +1,37 @@
+@using System.Web.UI.HtmlControls
+
 @{
     var paramUrlKey = Request.QueryString["key"];
-    //var entry = AsDynamic(App.Data["Entry"]).Where(x => x.UrlKey == paramUrlKey).ToList();
-    
-    var entry = AsDynamic(App.Data["Entry"]).FirstOrDefault();
-    var firstLetter = entry.Title[0];
-
+    var entry = AsDynamic(App.Data["Entry"]).Where(x => x.UrlKey == paramUrlKey).FirstOrDefault();
+    var parentPage = App.Settings.parentPage;
+    var firstLetter = (entry != null) ? entry.Title[0] : null;
 }
-<div class="ly-maxwrapper-white">
-    <div class="container-fluid">
-        <div class="ly-container-inner">
-            <div class="sc-element">
-                <h1>@entry.Abbreviation + @entry.Title</h1>
-                <p><strong>@entry.Summary</strong></p>
-                <p>@Html.Raw(entry.Details)</p>
 
-                <a href="#@firstLetter" class="btn btn-primary btn-sm">
-                    <i class="fa fa-angle-left"></i>   @App.Resources.GoBackText
-                </a>
+@if(entry != null){
+    <div class="ly-maxwrapper-white">
+        <div class="container-fluid">
+            <div class="ly-container-inner">
+                <div class="sc-element">
+                    @Edit.Toolbar(Content)
+                    <h1>@entry.Abbreviation – @entry.Title</h1>
+                    <p><strong>@entry.Summary</strong></p>
+                    <p>@Html.Raw(entry.Details)</p>
+                    <a href="@parentPage#@firstLetter" class="btn btn-primary btn-sm">
+                        <i class="fa fa-angle-left"></i>   @App.Resources.GoBackText
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
+} else {
+    <div class="ly-maxwrapper-white">
+        <div class="container-fluid">
+            <div class="ly-container-inner">
+                <h1>404 (not found) </h1>
+                <p>
+                    <a href="@parentPage" class="btn btn-primary btn-sm">@App.Resources.GoBackText</a>
+                </p>
+            </div>
+        </div>
+    </div>
+}
