@@ -1,10 +1,8 @@
 <link rel="stylesheet" href="@App.Path/assets/style.css" />
 @{
-    var entries = AsDynamic(Data["Default"]);
+    var entries = ((IEnumerable<dynamic>)AsDynamic(Data["Default"]));
+    var firstLetters = ((IEnumerable<dynamic>)AsDynamic(Data["Default"])).Select(l => l.Title.Substring(0, 1).ToUpper()).Distinct().OrderBy(l => l);
     var detailPage = App.Settings.DetailPage;
-    //var lib = CreateInstance("_library.cshtml");
-    string[] Letters = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q","R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-
 }
 
 <div class="ly-maxwrapper-white">
@@ -15,31 +13,33 @@
                     @Edit.Toolbar(Content)
                     <div class="app-glossary-letterlist">
                         <ul>
-                        @foreach(string i in Letters){
-                            <li>
-                                <a href="#@i">@i</a>  
-                            </li>
-                        }
+                            @foreach(string l in firstLetters) {
+                                <li>
+                                    <a href="#@l">@l</a>
+                                </li>
+                            }
                         </ul>
                     </div>
-
                 
                     <div class="app-glossary-entries">
-                        @foreach(var e in entries){
-                            //@if(){}
-                            
-                            <span id="A">A</span>
-                            <div class="sc-element">
-                                <strong>@e.Title</strong>
-                                <p>@e.Summary</p>
-                                @Edit.Toolbar(e)
-                                @{ 
-                                    var link = detailPage + "/key/" + e.UrlKey;
-                                } 
-                                <a href="@link">mehr erfahren</a>
-                        </div>
+
+                        @foreach (var l in firstLetters)
+                        {
+                            <span id="@l">@l</span>
+                            foreach (var e in entries.Where(p => p.Title.Substring(0, 1) == l))
+                            {
+                                <div class="sc-element">
+                                    <strong>@e.Title</strong>
+                                    <p>@e.Summary</p>
+                                    @Edit.Toolbar(e)
+                                    @{
+                                        var link = detailPage + "/key/" + e.UrlKey;
+                                    }
+                                    <a href="@link">mehr erfahren</a>
+                                </div>
+                            }
+
                         }
-                        
                     </div>
                 </div>
             </div>
