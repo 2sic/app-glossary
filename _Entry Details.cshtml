@@ -1,22 +1,33 @@
 @using System.Web.UI.HtmlControls
 
 @{
-    var paramUrlKey = Request.QueryString["key"];
-    var entry = AsDynamic(App.Data["Entry"]).Where(x => x.UrlKey == paramUrlKey).FirstOrDefault();
-    var parentPage = App.Settings.parentPage;
-    var firstLetter = (entry != null) ? entry.Title[0] : null;
+    // move this to visual query
+    var paramUrlKey = Request.QueryString["term"];
+    var term = AsDynamic(App.Data["Term"]).Where(x => x.UrlKey == paramUrlKey).FirstOrDefault();
 }
 
-@if(entry != null){
+@if(term != null){
+    // comment this - and move to lib
+    var pageHandler = HttpContext.Current.Handler as Page;
+    var metaTitle = term.Abbreviation + " - "  + term.Title + " | " + pageHandler.Title;
+    pageHandler.Title = metaTitle;
+
+    // comment this - and move to lib
+    var meta = term.Summary;
+    ((DotNetNuke.Framework.CDefault)pageHandler).Description = meta;
+    var metaTag = (HtmlMeta)pageHandler.FindControl("metaDescription");
+    metaTag.Visible = true;
+    metaTag.Content = HttpUtility.HtmlAttributeEncode(meta);
+
     <div class="ly-maxwrapper-white">
         <div class="container-fluid">
             <div class="ly-container-inner">
                 <div class="sc-element">
                     @Edit.Toolbar(Content)
-                    <h1>@entry.Abbreviation – @entry.Title</h1>
-                    <p><strong>@entry.Summary</strong></p>
-                    <p>@Html.Raw(entry.Details)</p>
-                    <a href="@parentPage#@firstLetter" class="btn btn-primary btn-sm">
+                    <h1>@term.Abbreviation – @term.Title</h1>
+                    <p><strong>@term.Summary</strong></p>
+                    <p>@Html.Raw(term.Details)</p>
+                    <a href="@App.Settings.ParentPage#@term.Title.Substring(0, 1)" class="btn btn-primary btn-sm">
                         <i class="fa fa-angle-left"></i>   @App.Resources.GoBackText
                     </a>
                 </div>
@@ -27,9 +38,9 @@
     <div class="ly-maxwrapper-white">
         <div class="container-fluid">
             <div class="ly-container-inner">
-                <h1>404 (not found) </h1>
+                <h1>404 (@App.Resources.NotFound) </h1>
                 <p>
-                    <a href="@parentPage" class="btn btn-primary btn-sm">@App.Resources.GoBackText</a>
+                    <a href="@App.Settings.ParentPage" class="btn btn-primary btn-sm">@App.Resources.GoBackText</a>
                 </p>
             </div>
         </div>

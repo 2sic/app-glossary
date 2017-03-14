@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="@App.Path/assets/style.css" />
+@{
+    var termGroups = ((IEnumerable<dynamic>)AsDynamic(Data["Default"]))
+        .OrderBy(t => t.Title)                              // sort terms
+        .GroupBy(l => l.Title.Substring(0, 1).ToUpper())    // group by first letter
+        .OrderBy(s => s.Key);                               // ensure sorting at group-level
+    var detailPage = App.Settings.DetailPage;
+}
+
+<div class="ly-maxwrapper-white">
+    <div class="container-fluid">
+        <div class="ly-container-inner">
+            <div class="sc-element">
+                <div class="app-glossary ly-maxwrapper-white">
+                    @Edit.Toolbar(Content)
+                    <div class="app-glossary-letterlist">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        @foreach(var grp in termGroups) {
+                                            <li>
+                                                <a href="#@grp.Key">@grp.Key</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="app-glossary-entries">
+
+                        @foreach (var grp in termGroups)
+                        {
+                            <span id="@grp.Key">@grp.Key</span>
+                            // todo: change "e" to "term"
+                            foreach (var e in grp)
+                            {
+                                <div class="sc-element">
+                                    <strong>@e.Title</strong>
+                                    <p>@e.Summary</p>
+                                    @Edit.Toolbar(e)
+                                    <a href="@Link.To(parameters: "term=" + e.UrlKey)">@App.Resources.MoreText</a>
+                                </div>
+                            }
+
+                        }
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
