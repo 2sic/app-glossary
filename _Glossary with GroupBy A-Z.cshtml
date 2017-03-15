@@ -13,52 +13,43 @@
             <div class="sc-element">
                 <div class="app-glossary ly-maxwrapper-white">
                     @Edit.Toolbar(Content)
-                    <div class="app-glossary-letterlist">
-                        <nav class="navbar navbar-default">
-                            <div class="container-fluid">
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav navbar-right">
-                                        @foreach(var grp in termGroups) {
-                                            <li>
-                                                <a href="#@grp.Key">@grp.Key</a>
-                                            </li>
-                                        }
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-
-                    <div class="app-glossary-entries">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <span>@App.Resources.GlossaryMenu</span>
+                            <a href="#" class="collapsed app-glossary-toggle js-app-glossary-toggle" title="@App.Resources.GlossaryMenu" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav app-glossary-letterlist">
+                                @foreach(var grp in termGroups) {
+                                    <li>
+                                        <a href="#@grp.Key">@grp.Key</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="app-glossary-terms">
 
                         @foreach (var grp in termGroups)
                         {
-                            <span id="@grp.Key">@grp.Key</span>
-                            // todo: change "e" to "term"
-                            foreach (var e in grp)
+                            <h2 id="@grp.Key">@grp.Key</h2>
+                            foreach (var term in grp)
                             {
                                 <div class="sc-element">
-                                    <strong>@e.Title</strong>
-                                    <p>@e.Summary</p>
-                                    @Edit.Toolbar(e)
-                                    <a href="@Link.To(parameters: "term=" + e.UrlKey)">@App.Resources.MoreText</a>
+                                    <div class="app-glossary-single-term">
+                                        <strong>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</strong>
+                                        <p>@term.Summary</p>
+                                        @Edit.Toolbar(term)
+                                        @* link created as requested by PM. Will be changed to @Link.To(parameters: "term=" + term.UrlKey) for standardised app. *@
+                                        <a href="@App.Settings.DetailPage/term/@term.UrlKey">@App.Resources.MoreText</a>
+                                    </div>
                                 </div>
                             }
-
                         }
                     </div>
-                    
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<script type="text/javascript" src="@App.Path/assets/scripts.js"></script>

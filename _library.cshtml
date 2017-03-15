@@ -1,0 +1,17 @@
+@using System.Web.UI.HtmlControls
+
+@functions{
+
+    public void SetMetaDescAndTitle(Page pageHandler, dynamic term){
+        
+        // set title of page
+        var metaTitle = term.Abbreviation + " - "  + term.Title + " | " + pageHandler.Title;
+        pageHandler.Title = metaTitle;
+
+        // set meta description of page
+        ((DotNetNuke.Framework.CDefault)pageHandler).Description = term.Summary;
+        var metaTag = (HtmlMeta)pageHandler.FindControl("metaDescription");
+        metaTag.Visible = true;
+        metaTag.Content = HttpUtility.HtmlAttributeEncode(term.Summary);
+    }
+}

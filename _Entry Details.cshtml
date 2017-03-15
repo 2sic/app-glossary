@@ -1,48 +1,31 @@
 @using System.Web.UI.HtmlControls
 
 @{
-    // move this to visual query
-    var paramUrlKey = Request.QueryString["term"];
-    var term = AsDynamic(App.Data["Term"]).Where(x => x.UrlKey == paramUrlKey).FirstOrDefault();
+    var term = AsDynamic(Data["Default"]).FirstOrDefault();
+    var lib = CreateInstance("_library.cshtml");
+    lib.SetMetaDescAndTitle(HttpContext.Current.Handler as Page, term);
 }
 
-@if(term != null){
-    // comment this - and move to lib
-    var pageHandler = HttpContext.Current.Handler as Page;
-    var metaTitle = term.Abbreviation + " - "  + term.Title + " | " + pageHandler.Title;
-    pageHandler.Title = metaTitle;
-
-    // comment this - and move to lib
-    var meta = term.Summary;
-    ((DotNetNuke.Framework.CDefault)pageHandler).Description = meta;
-    var metaTag = (HtmlMeta)pageHandler.FindControl("metaDescription");
-    metaTag.Visible = true;
-    metaTag.Content = HttpUtility.HtmlAttributeEncode(meta);
-
-    <div class="ly-maxwrapper-white">
-        <div class="container-fluid">
-            <div class="ly-container-inner">
-                <div class="sc-element">
-                    @Edit.Toolbar(Content)
-                    <h1>@term.Abbreviation – @term.Title</h1>
-                    <p><strong>@term.Summary</strong></p>
-                    <p>@Html.Raw(term.Details)</p>
-                    <a href="@App.Settings.ParentPage#@term.Title.Substring(0, 1)" class="btn btn-primary btn-sm">
-                        <i class="fa fa-angle-left"></i>   @App.Resources.GoBackText
-                    </a>
-                </div>
+<div class="ly-maxwrapper-white">
+    <div class="container-fluid">
+        <div class="ly-container-inner">
+            @if(term != null)
+            {
+            <div class="sc-element">
+                @Edit.Toolbar(Content)
+                <h1>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</h1>
+                <p><strong>@term.Summary</strong></p>
+                <p>@(!(String.IsNullOrEmpty(term.Details)) ? @Html.Raw(term.Details) : "")</p>
+                <a href="@App.Settings.ParentPage#@term.Title.Substring(0, 1)" class="btn btn-primary btn-sm">
+                    <i class="fa fa-angle-left"></i>   @App.Resources.GoBackText
+                </a>
             </div>
-        </div>
-    </div>
-} else {
-    <div class="ly-maxwrapper-white">
-        <div class="container-fluid">
-            <div class="ly-container-inner">
+            } else {
                 <h1>404 (@App.Resources.NotFound) </h1>
                 <p>
                     <a href="@App.Settings.ParentPage" class="btn btn-primary btn-sm">@App.Resources.GoBackText</a>
                 </p>
-            </div>
+            }
         </div>
     </div>
-}
+</div> 
