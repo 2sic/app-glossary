@@ -8,13 +8,13 @@
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #576066;
     width: 100%;
-    margin-top: 18px;
+    margin-top: 40px;
 }
 .app-glossary-letterlist:before{
         content: "\f02d";
         font: normal normal normal 14px/1 FontAwesome;
         position: absolute;
-        top: 32px;
+        top: 54px;
     }
 
 .app-glossary-letterlist li{
@@ -37,7 +37,12 @@
     background-color: #ccc;
     color: #576066;
 }
-
+.app-glossary-item-wrapper{
+    margin-bottom: 45px;
+}
+.app-glossary-terms h2{
+    font-weight: 300;
+}
 .app-glossary-terms p{
     margin: 0;
 }
@@ -51,8 +56,46 @@
     position: relative;
     top: 4px;
 }
+.app-glossary-detail-goback > a{
+    display: inline-block;
+}
+.app-glossary-detail-goback{
+    text-align: center;
+}
+
+/* System related - SC Elements */
+.app-glossary-manage-terms li:first-child a:after{
+  content: "Neuer Begriff";
+  color: rgb(2,139,255);
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  bottom: 25px;
+  left: 35px;
+}
+.app-glossary-manage-terms li a:after{
+  content: "Begriffe verwalten";
+  color: rgb(2,139,255);
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  bottom: 25px;
+  left: 35px;
+}
+.app-glossary-manage-terms li:nth-child(2){
+  position: relative;
+  left: 60px;
+}
+
+.app-glossary-manage-terms li:first-child a, .app-glossary-manage-terms li a{
+  text-decoration: none;
+}
 
 @media all and (max-width: 768px){
+    .app-glossary-manage-terms, .app-glossary-manage-app{
+        display: none!important;
+    }
+
     .app-glossary .navbar-collapse{
         padding: 0 15px;
     }
@@ -61,6 +104,12 @@
         border-bottom: 1px solid #576066;
         margin-top: 15px;
         padding: 12px 0;
+    }
+    .app-glossary .navbar-default .navbar-header{
+        cursor: pointer;
+    }
+    .app-glossary-terms h2{
+        font-size: 32px;
     }
     .app-glossary span{
         font-weight: bold;

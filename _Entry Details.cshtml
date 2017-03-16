@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="@App.Path/assets/style.css" />
 @using System.Web.UI.HtmlControls
 
 @{
@@ -12,13 +13,15 @@
             @if(term != null)
             {
             <div class="sc-element">
-                @Edit.Toolbar(Content)
+                @Edit.Toolbar(term, actions: "edit")
                 <h1>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</h1>
-                <p><strong>@term.Summary</strong></p>
+                <p><strong>@(!(String.IsNullOrEmpty(term.Summary)) ? @Html.Raw(term.Summary) : "")</strong></p>
                 <p>@(!(String.IsNullOrEmpty(term.Details)) ? @Html.Raw(term.Details) : "")</p>
-                <a href="@App.Settings.ParentPage#@term.Title.Substring(0, 1)" class="btn btn-primary btn-sm">
-                    <i class="fa fa-angle-left"></i>   @App.Resources.GoBackText
-                </a>
+                <div class="app-glossary-detail-goback">
+                    <a href="@App.Settings.ParentPage#@term.Title.Substring(0, 1)" class="btn btn-primary btn-sm">
+                        <i class="fa fa-angle-left"></i>   @App.Resources.GoBackText
+                    </a>    
+                </div>
             </div>
             } else {
                 <h1>404 (@App.Resources.NotFound) </h1>

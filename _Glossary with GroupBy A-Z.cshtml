@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="@App.Path/assets/style.css" />
 @{
-    var termGroups = ((IEnumerable<dynamic>)AsDynamic(Data["Default"]))
+    var termGroups = ((IEnumerable<dynamic>)AsDynamic(App.Data["Term"]))
         .OrderBy(t => t.Title)                              // sort terms
         .GroupBy(l => l.Title.Substring(0, 1).ToUpper())    // group by first letter
         .OrderBy(s => s.Key);                               // ensure sorting at group-level
@@ -12,11 +12,30 @@
         <div class="ly-container-inner">
             <div class="sc-element">
                 <div class="app-glossary ly-maxwrapper-white">
-                    @Edit.Toolbar(Content)
+                    @Edit.Toolbar(toolbar: new object[] { 
+                    new { 
+                        command = new { 
+                            action = "new", 
+                            contentType = "Term"
+                        } 
+                    },
+                    new { 
+                        command = new { 
+                            action = "contentitems", 
+                            contentType = "Term"
+                        },
+                        showCondition = true
+                    }
+                }, settings: new { hover="left", show = "always", classes = "app-glossary-manage-terms" })
+                @if(Permissions.UserMayEditContent){
+                    <div class="app-glossary-manage-app">
+                        @Edit.Toolbar()
+                    </div>
+                }
                     <nav class="navbar navbar-default">
-                        <div class="navbar-header">
+                        <div class="navbar-header" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                             <span>@App.Resources.GlossaryMenu</span>
-                            <a href="#" class="collapsed app-glossary-toggle js-app-glossary-toggle" title="@App.Resources.GlossaryMenu" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></a>
+                            <a href="#" class="collapsed app-glossary-toggle js-app-glossary-toggle" title="@App.Resources.GlossaryMenu" ></a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav app-glossary-letterlist">
@@ -31,20 +50,22 @@
                     <div class="app-glossary-terms">
 
                         @foreach (var grp in termGroups)
-                        {
+                        {   
+                            <div class="app-glossary-item-wrapper">
                             <h2 id="@grp.Key">@grp.Key</h2>
-                            foreach (var term in grp)
+                            @foreach (var term in grp)
                             {
                                 <div class="sc-element">
                                     <div class="app-glossary-single-term">
                                         <strong>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</strong>
                                         <p>@term.Summary</p>
-                                        @Edit.Toolbar(term)
+                                        @Edit.Toolbar(term, actions: "edit")
                                         @* link created as requested by PM. Will be changed to @Link.To(parameters: "term=" + term.UrlKey) for standardised app. *@
-                                        <a href="@App.Settings.DetailPage/term/@term.UrlKey">@App.Resources.MoreText</a>
+                                        <a href="@App.Settings.DetailPage/t/@term.UrlKey">@App.Resources.MoreText</a>
                                     </div>
                                 </div>
                             }
+                            </div>
                         }
                     </div>
                 </div>

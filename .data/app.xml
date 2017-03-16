@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.09.01" ExportDate="2017-03-15T15:53:31.6744293+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.09.01" ExportDate="2017-03-16T15:43:46.5736997+01:00">
   <Header>
     <App Guid="9189c8db-4ece-4b62-8b29-6660c58a47fc" />
     <Language Default="de-DE" />
@@ -354,7 +354,7 @@
       <Value Key="RequiredDnnVersion" Value="07.02.00" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
-      <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
+      <Value Key="SupportsAjaxReload" Value="False" Type="Boolean">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
     </Entity>
@@ -373,10 +373,10 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="App" AttributeSetStaticName="App-Resources" AttributeSetName="App-Resources" EntityGUID="d4d9773b-3131-4656-bf5c-b047e0ae5566" KeyNumber="10">
-      <Value Key="GoBackText" Value="Zurück zur Übersicht" Type="String">
+      <Value Key="GoBackText" Value="zur Übersicht" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
-      <Value Key="GoBackText" Value="Back to list" Type="String">
+      <Value Key="GoBackText" Value="go to list" Type="String">
         <Dimension DimensionID="4" ReadOnly="false" />
       </Value>
       <Value Key="MoreText" Value="mehr erfahren" Type="String">
@@ -486,7 +486,7 @@
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
       <Value Key="Pipeline" Value="acf99993-701e-4114-8e2f-4cce6bb242fd" Type="Entity" />
-      <Value Key="ViewNameInUrl" Value="term/.*" Type="String">
+      <Value Key="ViewNameInUrl" Value="t/.*" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
     </Entity>
@@ -544,23 +544,6 @@
       <Value Key="Description" Value="" Type="String" />
       <Value Key="PartAssemblyAndType" Value="ToSic.Eav.DataSources.PublishingFilter, ToSic.Eav.DataSources" Type="String" />
       <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 620,&#xD;&#xA;  &quot;Left&quot;: 440&#xD;&#xA;}" Type="String" />
-    </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="d9096fcc-21e8-4493-868f-d131fd8af64e">
-      <Value Key="Title" Value="asasd" Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
-      <Value Key="Abbreviation" Value="A.D." Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
-      <Value Key="Summary" Value="asdasd" Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
-      <Value Key="Details" Value="&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, corrupti necessitatibus, commodi porro blanditiis aspernatur expedita animi optio. Laudantium, voluptate! Inventore cum illo tempora et rem, nobis vel. Itaque, ipsa repellendus accusamus impedit numquam voluptates, distinctio neque reprehenderit laboriosam, cumque suscipit debitis iusto voluptatibus in commodi nam eos. Error eveniet porro aut culpa sed itaque rem in consequatur, at vitae sit facilis eos inventore explicabo a quaerat dolor qui magnam sint sequi quasi provident dolorem! Repellat tenetur necessitatibus atque nisi repudiandae, accusantium et iste. Hic consequatur exercitationem ullam odio autem, at dicta unde. Minima, asperiores! Laboriosam ipsa id deleniti vel.&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
-      <Value Key="UrlKey" Value="asasd" Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
     </Entity>
     <Entity AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="b419b90e-3add-4561-b531-f1cb670476cc" KeyString="75f85cc3-e9a5-4b7b-be8b-87971d878ef8">
       <Value Key="Label" Value="Begriff" Type="String">
@@ -623,36 +606,19 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="02d679f2-a1f3-490c-afdc-dfbb2d033c1c">
-      <Value Key="Title" Value="Abc" Type="String">
+      <Value Key="Title" Value="Abcd" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
       <Value Key="Abbreviation" Value="a.c" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
-      <Value Key="Summary" Value="abc" Type="String">
+      <Value Key="Summary" Value="abcd adsfasdfasdf" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
       <Value Key="Details" Value="&lt;p&gt;asdf&lt;/p&gt;" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
-      <Value Key="UrlKey" Value="abc" Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
-    </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="858af282-21a1-4627-b3d8-c364a34faad1">
-      <Value Key="Title" Value="U-Bahn" Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
-      <Value Key="Abbreviation" Value="U.B" Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
-      <Value Key="Summary" Value="asdfasdf" Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
-      <Value Key="Details" Value="&lt;p&gt;asdfasdf&lt;/p&gt;" Type="String">
-        <Dimension DimensionID="3" ReadOnly="false" />
-      </Value>
-      <Value Key="UrlKey" Value="u-bahn" Type="String">
+      <Value Key="UrlKey" Value="abcd" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
     </Entity>
@@ -683,7 +649,7 @@
       <Value Key="Attribute" Value="UrlKey" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
-      <Value Key="Value" Value="[QueryString:term]" Type="String">
+      <Value Key="Value" Value="[QueryString:t]" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
       <Value Key="Operator" Value="==" Type="String">
@@ -711,13 +677,115 @@
       <Value Key="Abbreviation" Value="" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
-      <Value Key="Summary" Value="Schlimme Musik" Type="String">
+      <Value Key="Summary" Value="Schöne Musik - Geschmacksache ;)" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
       <Value Key="Details" Value="&lt;p&gt;asdf&lt;/p&gt;" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
       <Value Key="UrlKey" Value="hansi-hinterseer" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="7f18a712-9e87-4468-83ba-da1cf01d780b">
+      <Value Key="Title" Value="Änderung" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Abbreviation" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Summary" Value="asdf" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Details" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlKey" Value="aenderung" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="18e1835e-5126-410d-b413-30b868f182b7">
+      <Value Key="Title" Value="2-Fach" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Abbreviation" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Summary" Value="asdfasd" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Details" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlKey" Value="2-fach" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="b141ffbd-7d61-49a9-aae0-d4d33b388faf">
+      <Value Key="Title" Value="Z-Style" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Abbreviation" Value="Z.S." Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Summary" Value="asdf" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Details" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlKey" Value="z-style" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="dc653fdd-5bc9-4aca-9001-519414688a4d">
+      <Value Key="Title" Value="asdf" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Abbreviation" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Summary" Value="asdfrdfsaasadffffffffdfsdfsdafaafgaf" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Details" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlKey" Value="asdf" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="8e7253d6-777a-47d9-bc37-b2e0dc657bc9">
+      <Value Key="Title" Value="Charlie" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Abbreviation" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Summary" Value="asdfasdf" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Details" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlKey" Value="charlie" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="9b9e2811-a8ca-4e96-af1d-720d320c63ff">
+      <Value Key="Title" Value="Gustav" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Abbreviation" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Summary" Value="asdfasdf" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="Details" Value="" Type="String">
+        <Dimension DimensionID="3" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlKey" Value="gustav" Type="String">
         <Dimension DimensionID="3" ReadOnly="false" />
       </Value>
     </Entity>
