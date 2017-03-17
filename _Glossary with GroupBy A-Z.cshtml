@@ -7,70 +7,68 @@
     var detailPage = App.Settings.DetailPage;
 }
 
-<div class="ly-maxwrapper-white">
-    <div class="container-fluid">
-        <div class="ly-container-inner">
-            <div class="sc-element">
-                <div class="app-glossary ly-maxwrapper-white">
-                    @Edit.Toolbar(toolbar: new object[] { 
-                    new { 
-                        command = new { 
-                            action = "new", 
-                            contentType = "Term"
-                        } 
-                    },
-                    new { 
-                        command = new { 
-                            action = "contentitems", 
-                            contentType = "Term"
-                        },
-                        showCondition = true
+
+<div class="sc-element">
+    <div class="app-glossary">
+        @Edit.Toolbar(toolbar: new object[] { 
+        new { 
+            command = new { 
+                action = "new", 
+                contentType = "Term"
+            } 
+        },
+        new { 
+            command = new { 
+                action = "contentitems", 
+                contentType = "Term"
+            },
+            showCondition = true
+        }
+    }, settings: new { hover="left", show = "always", classes = "app-glossary-manage-terms" })
+
+
+    @*   what kind of toolbar is to be placed here?   *@
+    @if(Permissions.UserMayEditContent){
+        <div class="app-glossary-manage-app">
+            @Edit.Toolbar()
+        </div>
+    }
+        <nav class="navbar navbar-default">
+            <div class="navbar-header" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span>@App.Resources.GlossaryMenu</span>
+                <a href="#" class="collapsed app-glossary-toggle js-app-glossary-toggle" title="@App.Resources.GlossaryMenu" ></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav app-glossary-letterlist">
+                    @foreach(var grp in termGroups) {
+                        <li>
+                            <a href="#@grp.Key">@grp.Key</a>
+                        </li>
                     }
-                }, settings: new { hover="left", show = "always", classes = "app-glossary-manage-terms" })
-                @if(Permissions.UserMayEditContent){
-                    <div class="app-glossary-manage-app">
-                        @Edit.Toolbar()
+                </ul>
+            </div>
+        </nav>
+        <div class="app-glossary-terms">
+
+            @foreach (var grp in termGroups)
+            {   
+                <div class="app-glossary-item-wrapper">
+                <h2 id="@grp.Key">@grp.Key</h2>
+                @foreach (var term in grp)
+                {
+                    <div class="sc-element">
+                        <div class="app-glossary-single-term">
+                            <strong>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</strong>
+                            <p>@term.Summary</p>
+                            @Edit.Toolbar(term, actions: "edit")
+                            <a href="@Link.To(parameters: "term=" + term.UrlKey)">@App.Resources.MoreText</a>
+                        </div>
                     </div>
                 }
-                    <nav class="navbar navbar-default">
-                        <div class="navbar-header" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span>@App.Resources.GlossaryMenu</span>
-                            <a href="#" class="collapsed app-glossary-toggle js-app-glossary-toggle" title="@App.Resources.GlossaryMenu" ></a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav app-glossary-letterlist">
-                                @foreach(var grp in termGroups) {
-                                    <li>
-                                        <a href="#@grp.Key">@grp.Key</a>
-                                    </li>
-                                }
-                            </ul>
-                        </div>
-                    </nav>
-                    <div class="app-glossary-terms">
-
-                        @foreach (var grp in termGroups)
-                        {   
-                            <div class="app-glossary-item-wrapper">
-                            <h2 id="@grp.Key">@grp.Key</h2>
-                            @foreach (var term in grp)
-                            {
-                                <div class="sc-element">
-                                    <div class="app-glossary-single-term">
-                                        <strong>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</strong>
-                                        <p>@term.Summary</p>
-                                        @Edit.Toolbar(term, actions: "edit")
-                                        @* link created as requested by PM. Will be changed to @Link.To(parameters: "term=" + term.UrlKey) for standardised app. *@
-                                        <a href="@App.Settings.DetailPage/t/@term.UrlKey">@App.Resources.MoreText</a>
-                                    </div>
-                                </div>
-                            }
-                            </div>
-                        }
-                    </div>
                 </div>
-            </div>
+            }
         </div>
     </div>
 </div>
+       
 <script type="text/javascript" src="@App.Path/assets/scripts.js"></script>

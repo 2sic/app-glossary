@@ -10,20 +10,11 @@
     width: 100%;
     margin-top: 40px;
 }
-.app-glossary-letterlist:before{
-        content: "\f02d";
-        font: normal normal normal 14px/1 FontAwesome;
-        position: absolute;
-        top: 54px;
-    }
 
 .app-glossary-letterlist li{
     list-style-type: none;
     display: inline-block;
     margin: 0;
-}
-.app-glossary-letterlist li:first-child{
-    margin-left: 30px;
 }
 .app-glossary .app-glossary-letterlist > li > a{
     padding: 8px 6px;
@@ -40,9 +31,6 @@
 .app-glossary-item-wrapper{
     margin-bottom: 45px;
 }
-.app-glossary-terms h2{
-    font-weight: 300;
-}
 .app-glossary-terms p{
     margin: 0;
 }
@@ -56,42 +44,11 @@
     position: relative;
     top: 4px;
 }
-.app-glossary-detail-goback > a{
-    display: inline-block;
-}
-.app-glossary-detail-goback{
-    text-align: center;
-}
-
-/* System related - SC Elements */
-.app-glossary-manage-terms li:first-child a:after{
-  content: "Neuer Begriff";
-  color: rgb(2,139,255);
-  font-size: 12px;
-  font-weight: bold;
-  position: relative;
-  bottom: 25px;
-  left: 35px;
-}
-.app-glossary-manage-terms li a:after{
-  content: "Begriffe verwalten";
-  color: rgb(2,139,255);
-  font-size: 12px;
-  font-weight: bold;
-  position: relative;
-  bottom: 25px;
-  left: 35px;
-}
-.app-glossary-manage-terms li:nth-child(2){
-  position: relative;
-  left: 60px;
-}
-
-.app-glossary-manage-terms li:first-child a, .app-glossary-manage-terms li a{
-  text-decoration: none;
-}
 
 @media all and (max-width: 768px){
+    .app-glossary-letterlist{
+        margin-top: 15px;
+    }
     .app-glossary-manage-terms, .app-glossary-manage-app{
         display: none!important;
     }
@@ -109,21 +66,16 @@
         cursor: pointer;
     }
     .app-glossary-terms h2{
-        font-size: 32px;
+        font-size: 28px;
     }
     .app-glossary span{
         font-weight: bold;
         display: inline-block;
-        margin-left: 10px;
-    }
-    .app-glossary span:before{
-        content: "\f02d";
-        font: normal normal normal 14px/1 FontAwesome;
-        position: relative;
-        right: 10px;
     }
     .app-glossary-letterlist > li{
         display: block;
+        width: 25%;
+        float: left;
     }
     .app-glossary-letterlist{
         border-top: none;

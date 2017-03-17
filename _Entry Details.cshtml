@@ -7,28 +7,22 @@
     lib.SetMetaDescAndTitle(HttpContext.Current.Handler as Page, term);
 }
 
-<div class="ly-maxwrapper-white">
-    <div class="container-fluid">
-        <div class="ly-container-inner">
-            @if(term != null)
-            {
-            <div class="sc-element">
-                @Edit.Toolbar(term, actions: "edit")
-                <h1>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</h1>
-                <p><strong>@(!(String.IsNullOrEmpty(term.Summary)) ? @Html.Raw(term.Summary) : "")</strong></p>
-                <p>@(!(String.IsNullOrEmpty(term.Details)) ? @Html.Raw(term.Details) : "")</p>
-                <div class="app-glossary-detail-goback">
-                    <a href="@App.Settings.ParentPage#@term.Title.Substring(0, 1)" class="btn btn-primary btn-sm">
-                        <i class="fa fa-angle-left"></i>   @App.Resources.GoBackText
-                    </a>    
-                </div>
-            </div>
-            } else {
-                <h1>404 (@App.Resources.NotFound) </h1>
-                <p>
-                    <a href="@App.Settings.ParentPage" class="btn btn-primary btn-sm">@App.Resources.GoBackText</a>
-                </p>
-            }
-        </div>
+
+@if(term != null)
+{
+<div class="sc-element">
+    @Edit.Toolbar(term, actions: "edit")
+    <h1>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</h1>
+    <p><strong>@(!(String.IsNullOrEmpty(term.Summary)) ? @Html.Raw(term.Summary) : "")</strong></p>
+    <p>@(!(String.IsNullOrEmpty(term.Details)) ? @Html.Raw(term.Details) : "")</p>
+    <div class="app-glossary-detail-goback">
+        <a href="@App.Settings.ParentPage#@term.Title.Substring(0, 1)" class="btn btn-primary btn-sm">@App.Resources.GoBackText</a>    
     </div>
-</div> 
+</div>
+} else {
+    <h1>404 (@App.Resources.NotFound) </h1>
+    <p>
+        <a href="@App.Settings.ParentPage" class="btn btn-primary btn-sm">@App.Resources.GoBackText</a>
+    </p>
+}
+       
