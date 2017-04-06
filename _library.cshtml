@@ -2,16 +2,16 @@
 
 @functions{
 
-    public void SetMetaDescAndTitle(Page pageHandler, dynamic term){
-        
+    public void SetMetaDescAndTitle(String title, String abbreviation, String summary){
+        var pageHandler = HttpContext.Current.Handler as Page;
         // set title of page
-        var metaTitle = term.Abbreviation + " - "  + term.Title + " | " + pageHandler.Title;
+        var metaTitle = abbreviation + " - "  + title + " | " + pageHandler.Title;
         pageHandler.Title = metaTitle;
 
         // set meta description of page
-        ((DotNetNuke.Framework.CDefault)pageHandler).Description = term.Summary;
+        ((DotNetNuke.Framework.CDefault)pageHandler).Description = summary;
         var metaTag = (HtmlMeta)pageHandler.FindControl("metaDescription");
         metaTag.Visible = true;
-        metaTag.Content = HttpUtility.HtmlAttributeEncode(term.Summary);
+        metaTag.Content = HttpUtility.HtmlAttributeEncode(summary);
     }
 }

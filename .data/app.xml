@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.12.00" ExportDate="2017-03-17T16:46:11.254183+01:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.00.00" ModuleVersion="08.12.00" ExportDate="2017-04-06T13:38:56.3845965+02:00">
   <Header>
     <App Guid="9189c8db-4ece-4b62-8b29-6660c58a47fc" />
     <Language Default="en-US" />
@@ -351,11 +351,11 @@
         <Dimension DimensionID="52" ReadOnly="false" />
         <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
-      <Value Key="Description" Value="" Type="String">
+      <Value Key="Description" Value="This is a simple glossary app" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
         <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="00.00.01" Type="String">
+      <Value Key="Version" Value="01.00.00" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
         <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
@@ -427,121 +427,98 @@
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="7f54c073-db6d-4695-a041-7163e876ae23">
-      <Value Key="Name" Value="List with A-Z bar and Grouping" Type="String">
+      <Value Key="Name" Value="A-Z List with A-Z bar and Grouping" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
+      </Value>
+      <Value Key="Name" Value="A-Z Liste mit A-Z Balken und Gruppierung" Type="String">
         <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Glossary with GroupBy A-Z.cshtml" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="ContentDemoEntity" Value="6cead752-8f86-4c1c-bf9f-266ff22236d2" Type="Entity" />
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="" Type="Entity" />
       <Value Key="ListContentTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="ListContentDemoEntity" Value="" Type="Entity" />
       <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="ListPresentationDemoEntity" Value="" Type="Entity" />
       <Value Key="Type" Value="C# Razor" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="IsHidden" Value="False" Type="Boolean">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="Location" Value="Portal File System" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="UseForList" Value="True" Type="Boolean">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="Pipeline" Value="" Type="Entity" />
       <Value Key="ViewNameInUrl" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="51393e95-26cf-49d1-b87a-f566edd78e2a">
       <Value Key="Name" Value="Details" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="Path" Value="_Entry Details.cshtml" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="ContentTypeStaticName" Value="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="ContentDemoEntity" Value="6cead752-8f86-4c1c-bf9f-266ff22236d2" Type="Entity" />
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="PresentationDemoEntity" Value="" Type="Entity" />
       <Value Key="ListContentTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="ListContentDemoEntity" Value="" Type="Entity" />
       <Value Key="ListPresentationTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="ListPresentationDemoEntity" Value="" Type="Entity" />
       <Value Key="Type" Value="C# Razor" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="IsHidden" Value="True" Type="Boolean">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="Location" Value="Portal File System" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="UseForList" Value="False" Type="Boolean">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="PublishData" Value="False" Type="Boolean">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="StreamsToPublish" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
       <Value Key="Pipeline" Value="acf99993-701e-4114-8e2f-4cce6bb242fd" Type="Entity" />
       <Value Key="ViewNameInUrl" Value="term/.*" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
-        <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
     </Entity>
     <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="6cead752-8f86-4c1c-bf9f-266ff22236d2">
@@ -728,20 +705,20 @@
         <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
     </Entity>
-    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="80507dbf-4e32-4196-9259-8c7233c725cf">
-      <Value Key="Summary" Value="This is a hello world entry." Type="String">
+    <Entity AssignmentObjectType="Default" AttributeSetStaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" AttributeSetName="Term" EntityGUID="bb66f63a-c403-4da7-a62d-65bbf2aa418f">
+      <Value Key="Summary" Value="This is another term" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="Details" Value="&lt;p&gt;This is a hello world entry that is awesome.&lt;/p&gt;" Type="String">
+      <Value Key="Details" Value="&lt;p&gt;Details&lt;/p&gt;" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="Hello World" Type="String">
+      <Value Key="Title" Value="Chrysler" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="UrlKey" Value="hello-world" Type="String">
+      <Value Key="UrlKey" Value="chrysler" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="Abbreviation" Value="H.W." Type="String">
+      <Value Key="Abbreviation" Value="C.H." Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
     </Entity>

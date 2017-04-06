@@ -1,28 +1,24 @@
-<link rel="stylesheet" href="@App.Path/assets/style.css" />
-@using System.Web.UI.HtmlControls
+<link rel="stylesheet" href="@App.Path/assets/style.css" data-enableoptimizations="bottom" />
 
 @{
     var term = AsDynamic(Data["Default"]).FirstOrDefault();
     var lib = CreateInstance("_library.cshtml");
-    lib.SetMetaDescAndTitle(HttpContext.Current.Handler as Page, term);
+    lib.SetMetaDescAndTitle(term.Title, term.Abbreviation, term.Summary);
 }
 
-@if(term != null)
-
-{
 <div class="sc-element">
     @Edit.Toolbar(term, actions: "edit")
-    <h1>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</h1>
-    <p><strong>@(!(String.IsNullOrEmpty(term.Summary)) ? @Html.Raw(term.Summary) : "")</strong></p>
-    <p>@(!(String.IsNullOrEmpty(term.Details)) ? @Html.Raw(term.Details) : "")</p>
+    <h1>
+        @(String.IsNullOrEmpty(term.Abbreviation) ? "" : term.Abbreviation + " – ")
+        @term.Title
+    </h1>
+    <p>
+        <strong>@Html.Raw(term.Summary)</strong>
+    </p>
+    <p>@Html.Raw(term.Details)</p>
     <div class="app-glossary-detail-goback">
         <a href="@App.Settings.List#@term.Title.Substring(0, 1)" class="btn btn-primary btn-sm">@App.Resources.GoBackText</a>    
     </div>
 </div>
-} else {
-    <h1>404 (@App.Resources.NotFound) </h1>
-    <p>
-        <a href="@App.Settings.List" class="btn btn-primary btn-sm">@App.Resources.GoBackText</a>
-    </p>
-}
+
        

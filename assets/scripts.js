@@ -4,13 +4,13 @@ $(document).ready(function(){
     })
 
     // smooth scrolling 
-    $('a[href*="#"]:not([href="#"])').click(function() {
+    $('.app-glossary a[href*="#"]:not([href="#"])').click(function() {
+        console.log(this);
         var target = $(this.hash);
             if (target.length) {
                 $('html, body').animate({
                 scrollTop: target.offset().top
                 }, 500);
-                return false;
             }
     });
 })

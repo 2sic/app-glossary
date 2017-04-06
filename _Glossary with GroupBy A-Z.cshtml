@@ -1,12 +1,10 @@
-<link rel="stylesheet" href="@App.Path/assets/style.css" />
+<link rel="stylesheet" href="@App.Path/assets/style.css" data-enableoptimizations="bottom" />
 @{
     var termGroups = ((IEnumerable<dynamic>)AsDynamic(App.Data["Term"]))
         .OrderBy(t => t.Title)                              // sort terms
         .GroupBy(l => l.Title.Substring(0, 1).ToUpper())    // group by first letter
         .OrderBy(s => s.Key);                               // ensure sorting at group-level
-    var detailPage = App.Settings.DetailPage;
 }
-
 
 <div class="sc-element">
     <div class="app-glossary">
@@ -24,15 +22,10 @@
             },
             showCondition = true
         }
-    }, settings: new { hover="left", show = "always", classes = "app-glossary-manage-terms" })
+    }, settings: new { hover = "left", classes = "app-glossary-manage-terms" })
 
 
-    @*   what kind of toolbar is to be placed here?   *@
-    @if(Permissions.UserMayEditContent){
-        <div class="app-glossary-manage-app">
-            @Edit.Toolbar()
-        </div>
-    }
+        @Edit.Toolbar()
         <nav class="navbar navbar-default">
             <div class="navbar-header" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span>@App.Resources.GlossaryMenu</span>
@@ -48,6 +41,7 @@
                 </ul>
             </div>
         </nav>
+        
         <div class="app-glossary-terms">
 
             @foreach (var grp in termGroups)
@@ -58,9 +52,14 @@
                 {
                     <div class="sc-element">
                         <div class="app-glossary-single-term">
-                            <strong>@((String.IsNullOrEmpty(term.Abbreviation) == false) ? @term.Abbreviation + " – " : "")@term.Title</strong>
+                            <strong>@(String.IsNullOrEmpty(term.Abbreviation) ? "" : @term.Abbreviation + " – ")@term.Title</strong>
                             <p>@term.Summary</p>
-                            @Edit.Toolbar(term, actions: "edit")
+                            @Edit.Toolbar(toolbar: new { 
+                                action = "edit,delete", 
+                                entityId = term.EntityId, 
+                                entityGuid = term.EntityGuid, 
+                                entityTitle = term.EntityTitle 
+                                })
                             <a href="@Link.To(parameters: "term=" + term.UrlKey)">@App.Resources.MoreText</a>
                         </div>
                     </div>
@@ -71,4 +70,4 @@
     </div>
 </div>
        
-<script type="text/javascript" src="@App.Path/assets/scripts.js"></script>
+<script type="text/javascript" src="@App.Path/assets/scripts.js" data-enableoptimizations="200:bottom"></script>

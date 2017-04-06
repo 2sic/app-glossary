@@ -24,7 +24,7 @@
 
 .app-glossary .app-glossary-letterlist > li > a:hover,
 .app-glossary .app-glossary-letterlist > li > a:focus,
-.app-glossary .app-glossary-letterlist > li > a:active{
+.app-glossary .app-glossary-letterlist > li > a:active {
     background-color: #ccc;
     color: #576066;
 }
