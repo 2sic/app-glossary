@@ -1,5 +1,5 @@
+<img src="app-icon.png" width="250px" align="right">
 ## Glossary App for DNN / 2sxc
-
 This is a basic term glossary with
 
 1. All terms are sorted by alphabet and grouped by initial letter
