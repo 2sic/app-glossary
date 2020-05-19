@@ -1,12 +1,23 @@
-<img src="app-icon.png" width="250px" align="right">
-## Glossary App for DNN / 2sxc
-This is a basic term glossary with
+<image src="app-icon.png" align="right" width="200px">
 
-1. All terms are sorted by alphabet and grouped by initial letter
-1. A-Z link-bar
-1. Details page for each term with SEO url containing the term and whatever else you want
-1. Multi-language
-1. versioned data
-1. etc.
+# Glossary App for DNN (DotNetNuke)
 
-See screenshots and read more about it in the [app-catalog](http://2sxc.org/en/Apps/glossary-a-z)
+A term glossary app to use with 2sxc
+
+## Installing the app
+
+You can install the app straight forward with the ["Installing Glossary" checklist](https://azing.org/2sxc/r/JPX0Etz7)
+
+## Customizing the app
+
+### Configuration (Settings, Resources)
+
+The Glossary App has no app settings but some app resources you can change.
+
+### Style
+
+If you want to customize the CSS, you will usually follow the ["Create Custom Styles in a Standard 2sxc App" checklist](https://azing.org/2sxc/r/gg_aB9FD)
+
+## Screenshots
+
+Read more about it in the [App Catalog](https://2sxc.org/en/apps/app/glossary-a-z-v2)
