@@ -1,12 +1,12 @@
 {
-  "name": "glossary-app",
-  "version": "02.00.00",
+  "name": "app-glossary3",
+  "version": "03.00.00",
   "description": "A glossary app for 2sxc",
   "main": "(none)",
   "scripts": {
     "build-prod": "webpack"
   },
-  "author": "2sic internet solutions 2020",
+  "author": "2sic internet solutions 2021",
   "license": "ISC",
   "devDependencies": {
     "@types/fancybox": "^3.5.2",
