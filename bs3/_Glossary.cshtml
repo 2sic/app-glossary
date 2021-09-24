@@ -9,11 +9,11 @@
 
 <div class="app-glossary4" @Edit.TagToolbar(toolbar: "contentitems?contentType=Term")>
   <nav class="navbar navbar-default">
-    <div class="navbar-header" data-toggle="collapse" data-target="#glossaryNav" aria-expanded="false">
+    <div class="navbar-header" data-toggle="collapse" data-target="#glossary-nav-@Content.EntityId" aria-expanded="false">
       <span>@Resources.GlossaryMenu</span>
       <span class="collapsed app-glossary4-toggle" title="@Resources.GlossaryMenu" ></span>
     </div>
-    <div class="collapse navbar-collapse" id="glossaryNav">
+    <div class="collapse navbar-collapse" id="glossary-nav-@Content.EntityId">
       <ul class="nav navbar-nav app-glossary4-letterlist">
       @foreach(var grp in termGroups) {
         <li><a data-hash="@grp.Key">@grp.Key</a></li>
