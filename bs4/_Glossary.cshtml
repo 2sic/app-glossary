@@ -7,7 +7,7 @@
     .OrderBy(s => s.Key);                               // sort asc
 }
 
-<div class="app-glossary4" @Edit.TagToolbar(toolbar: "contentitems?contentType=Term")>
+<div class="app-glossary3" @Edit.TagToolbar(toolbar: "contentitems?contentType=Term")>
   <nav class="navbar navbar-expand-md navbar-light px-0 py-1 py-md-0">
     <span class="navbar-brand d-block d-md-none font-weight-bold">@Resources.GlossaryMenu</span>
     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#glossary-nav-@Content.EntityId" aria-expanded="false">
@@ -17,7 +17,7 @@
       <ul class="navbar-nav flex-row flex-wrap">
         @foreach(var grp in termGroups) {
           <li class="nav-item">
-            <a class="nav-link" data-hash="@grp.Key">@grp.Key</a>
+            <a class="nav-link" href='@Tags.SafeUrl("#" + grp.Key)'>@grp.Key</a>
           </li>
         }
       </ul>
