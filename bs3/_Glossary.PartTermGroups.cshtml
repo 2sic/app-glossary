@@ -10,8 +10,12 @@
     <div class="app-glossary-item-wrapper">
         <h2 id="@AsDynamic(grp).Key">@AsDynamic(grp).Key</h2>
         @foreach (var term in grp) {
+        // Appends " – " to abbreviation if exists
+        var titleAbbreviation = (Text.Has(term.Abbreviation) ? term.Abbreviation + " – " : "");
+        var fullTermTitle = titleAbbreviation + term.Title;
+
         <div class="app-glossary-single-term" @Edit.TagToolbar(term, toolbar: "%delete&show=true")>
-            <strong>@(Text.Has(term.Abbreviation) ? term.Abbreviation + " – " : "")@term.Title</strong>
+            <strong>@fullTermTitle</strong>
             <p>@term.Summary</p>
             <small><a href='@Tags.SafeUrl(Link.To(parameters: "term=" + term.UrlKey))'>@Resources.MoreText</a></small>
         </div>
