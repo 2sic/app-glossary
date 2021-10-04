@@ -1,23 +1,42 @@
 <image src="app-icon.png" align="right" width="200px">
 
-# Glossary App for DNN (DotNetNuke)
+# Glossary 3 App for .net CMSs
+
+> This is a [2sxc](https://2sxc.org) App for [DNN ☢️](https://www.dnnsoftware.com/) and [Oqtane 💧](https://www.oqtane.org/)
 
 A term glossary app to use with 2sxc
+
+| Aspect              | Status | Comments or Version |
+| ------------------- | :----: | ------------------- |
+| 2sxc                | ✅    | requires 2sxc v12.05
+| Dnn                 | ✅    | For v7, v8 and v9
+| Oqtane 2            | ✅    | Requires v2.02
+| No jQuery           | ✅    | 
+| Live Demo           | ➖    |
+| Install Checklist   | ✅    | See [Installation](https://azing.org/2sxc/r/JPX0Etz7) on [azing.org](https://azing.org/2sxc)
+| Source & License    | ✅    | included, ISC/MIT
+| App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/glossary-a-z-v2)
+| Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/glossary-a-z-v2)
+| Best Practices      | ✅    | Uses v12.05 conventions
+| Bootstrap 3         | ✔️    | 
+| Bootstrap 4         | ✅    |
+| Bootstrap 5         | ✔️    | Works well, but not optimized
 
 ## Installing the app
 
 You can install the app straight forward with the ["Installing Glossary" checklist](https://azing.org/2sxc/r/JPX0Etz7)
 
-## Customizing the app
-
-### Configuration (Settings, Resources)
+## Customize the App
 
 The Glossary App has no app settings but some app resources you can change.
 
-### Style
-
 If you want to customize the CSS, you will usually follow the ["Create Custom Styles in a Standard 2sxc App" checklist](https://azing.org/2sxc/r/gg_aB9FD)
 
-## Screenshots
+## History
 
-Read more about it in the [App Catalog](https://2sxc.org/en/apps/app/glossary-a-z-v2)
+* v03.00 2021-10
+    * Updated to best-practices of 2sxc 12.05
+    * Hybrid, so it works with Oqtane
+    * Tested to look ok on Bootstrap5
+
+TODO: @2ro - standardize code of accordions across apps
