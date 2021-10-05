@@ -10,7 +10,7 @@
   if(term == null) {
     <h1>@Resources.TermNotFoundTitle</h1>
     <p>@Resources.TermNotFoundText</p>
-    <a href="@Tags.SafeUrl(Link.To())" class="btn btn-primary btn-sm">@Resources.GoBackText</a>
+    <a href="@Link.To()" class="btn btn-primary btn-sm">@Resources.GoBackText</a>
     page.SetHttpStatus(404);
     return;
   }
