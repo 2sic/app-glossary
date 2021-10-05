@@ -33,7 +33,7 @@
     <strong>@term.Summary</strong>
   </p>
   <p>@Html.Raw(term.Details)</p>
-  <a href='@Tags.SafeUrl(Link.To(parameters: "#" + term.Title.Substring(0, 1)))' class="btn btn-outline-primary btn-sm">
+  <a href='@Link.To(parameters: "#" + term.Title.Substring(0, 1))' class="btn btn-outline-primary btn-sm">
     @Resources.GoBackText
   </a>
 </div>

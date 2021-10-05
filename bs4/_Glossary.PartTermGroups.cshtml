@@ -21,7 +21,7 @@
       })>
         <strong>@fullTermTitle</strong>
         <p class="mb-0">@term.Summary</p>
-        <small><a href='@Tags.SafeUrl(Link.To(parameters: "term=" + term.UrlKey))'>@Resources.MoreText</a></small>
+        <small><a href='@Link.To(parameters: "term=" + term.UrlKey)'>@Resources.MoreText</a></small>
       </div>
     }
   </div>

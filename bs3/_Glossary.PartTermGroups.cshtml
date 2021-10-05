@@ -17,7 +17,7 @@
         <div class="app-glossary-single-term" @Edit.TagToolbar(term, toolbar: "%delete&show=true")>
             <strong>@fullTermTitle</strong>
             <p>@term.Summary</p>
-            <small><a href='@Tags.SafeUrl(Link.To(parameters: "term=" + term.UrlKey))'>@Resources.MoreText</a></small>
+            <small><a href='@Link.To(parameters: "term=" + term.UrlKey)'>@Resources.MoreText</a></small>
         </div>
         }
     </div>
