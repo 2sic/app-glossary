@@ -38,5 +38,3 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
     * Updated to best-practices of 2sxc 12.05
     * Hybrid, so it works with Oqtane
     * Tested to look ok on Bootstrap5
-
-TODO: @2ro - standardize code of accordions across apps
