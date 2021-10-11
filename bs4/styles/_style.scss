@@ -30,3 +30,11 @@
     }
   }
 }
+
+
+@media (max-width: 767px) {
+  .navbar {
+    position: unset !important;
+    top: unset !important;
+  }
+}
