@@ -33,8 +33,10 @@
 
 // styles to override oqtane mobile menu styling
 @media (max-width: 767px) {
-  .navbar {
-    position: unset !important;
-    top: unset !important;
+  .app-glossary3 {
+    .navbar {
+      position: unset !important;
+      top: unset !important;
+    }
   }
 }
