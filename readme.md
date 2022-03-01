@@ -38,5 +38,8 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
     * Updated to best-practices of 2sxc 12.05
     * Hybrid, so it works with Oqtane
     * Tested to look ok on Bootstrap5
-* v03.01 2022-02
+* v03.01.01 2022-02
+    * Set default view
+    * Updated License
+* v03.01.02 02022-03
     * Enabled data-optimizations
