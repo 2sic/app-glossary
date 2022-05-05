@@ -43,3 +43,5 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
     * Updated License
 * v03.01.02 02022-03
     * Enabled data-optimizations
+* v03.02.00 2022-04
+    * Replaced data-enableoptimizations with IPageService.AssetAttribute()
