@@ -3,7 +3,7 @@
 
 @{
   // Get the PageServices for setting Titles and HTTP error headers
-  var page = GetService<ToSic.Sxc.Web.IPageService>();
+  var pageSvc = GetService<ToSic.Sxc.Web.IPageService>();
 
   var term = AsList(Data).FirstOrDefault();
 
@@ -12,7 +12,7 @@
     <h1>@Resources.TermNotFoundTitle</h1>
     <p>@Resources.TermNotFoundText</p>
     <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@Resources.GoBackText</a>
-    page.SetHttpStatus(404);
+    pageSvc.SetHttpStatus(404);
     return;
   }
 
@@ -21,10 +21,10 @@
   var fullTermTitle = titleAbbreviation + term.Title;
 
   // Set the title of the page
-  page.SetTitle(fullTermTitle + " | ");  // will prepend to the existing title
+  pageSvc.SetTitle(fullTermTitle + " | ");  // will prepend to the existing title
 
   // Set the description meta tag to term summary
-  page.AddMeta("description", term.summary);
+  pageSvc.AddMeta("description", term.summary);
 }
 
 <div @Edit.TagToolbar(term, toolbar: "-layout")>
