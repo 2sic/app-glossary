@@ -45,3 +45,7 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
     * Enabled data-optimizations
 * v03.02.00 2022-04
     * Replaced data-enableoptimizations with IPageService.AssetAttribute()
+* v03.03.00 2022-06 
+    * Changed all base classes to their 2sxc 14 equivalents
+    * Replaced all GetService<> with the new ServiceKit14
+    * Updated Webpack
