@@ -49,3 +49,5 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
     * Changed all base classes to their 2sxc 14 equivalents
     * Replaced all GetService<> with the new ServiceKit14
     * Updated Webpack
+* v03.03.01 2022-08
+    * Updated the lighspeed config
