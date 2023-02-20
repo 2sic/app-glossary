@@ -1,13 +1,6 @@
 @inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-@{
-  // 2. Include Bootstrap4 if the framework isn't known
-  if (Kit.Css.IsUnknown) {
-    Kit.Page.Activate("Bootstrap4");
-  }
-  
-  Kit.Page.Activate("turnOn"); // see https://r.2sxc.org/turnon
-}
-<turnOn turn-on='{"run": "window.appGlossary3.init()"}'></turnOn>
+
+@Kit.Page.TurnOn("window.appGlossary3.init()")
 <link rel="stylesheet" href="@App.Path/bs3/dist/styles.min.css" @Kit.Page.AssetAttributes()">
 <script src="@App.Path/bs3/dist/scripts.min.js" @Kit.Page.AssetAttributes()></script>

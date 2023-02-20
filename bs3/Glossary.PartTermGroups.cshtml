@@ -19,7 +19,7 @@
         <div class="app-glossary-single-term" @termToolbar.For(term)>
             <strong>@fullTermTitle</strong>
             <p>@term.Summary</p>
-            <small><a href='@Link.To(parameters: "term=" + term.UrlKey)'>@Resources.MoreText</a></small>
+            <small><a href='@Link.To(parameters: "term=" + term.UrlKey)'>@Resources.Get("MoreText")</a></small>
         </div>
         }
     </div>
