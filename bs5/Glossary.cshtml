@@ -4,18 +4,18 @@
 @{
   var termGroups = AsList(App.Data["Term"])
     .GroupBy(l => l.Title.Substring(0, 1).ToUpper())    // group by first letter
-    .OrderBy(s => s.Key);     
-    
+    .OrderBy(s => s.Key);                               // sort asc
+
   var termToolbar = Kit.Toolbar.Default().Data("Term");
 }
 
 <div class="app-glossary3" @termToolbar>
   <nav class="navbar navbar-expand-md navbar-light px-0 py-1 py-md-0">
-    <span class="navbar-brand d-block d-md-none font-weight-bold">@Resources.GlossaryMenu</span>
+    <span class="navbar-brand d-block d-md-none fw-bold">@Resources.GlossaryMenu</span>
     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#glossary-nav-@Content.EntityId" data-bs-target="#glossary-nav-@Content.EntityId" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse collapse pr-5 pr-md-0 my-2 my-md-0" id="glossary-nav-@Content.EntityId">
+    <div class="navbar-collapse collapse pe-5 pe-md-0 my-2 my-md-0" id="glossary-nav-@Content.EntityId">
       <ul class="navbar-nav flex-row flex-wrap">
         @foreach(var grp in termGroups) {
           <li class="nav-item">
@@ -25,7 +25,7 @@
       </ul>
     </div>
   </nav>
-  @Html.Partial("./_Glossary.PartTermGroups.cshtml", new { TermGroups = termGroups } )
+  @Html.Partial("./Glossary.PartTermGroups.cshtml", new { TermGroups = termGroups } )
 </div>
 
-@Html.Partial("./_Glossary.PartAssets.cshtml")
+@Html.Partial("./Glossary.PartAssets.cshtml")
