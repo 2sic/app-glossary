@@ -6,5 +6,7 @@
 
 @* When the page is ready, run glossary init JS *@
 @Kit.Page.TurnOn("window.appGlossary3.init()")
-<link rel="stylesheet" href="@App.Path/bs5/dist/styles.min.css" @Kit.Page.AssetAttributes()>
-<script src="@App.Path/bs5/dist/scripts.min.js" @Kit.Page.AssetAttributes()></script>
+
+@* Load the JavaScripts/Styles from the App folder. Each edition (bs5, bs3, etc.) has different files *@
+<link rel="stylesheet" href="@CmsContext.View.Path/dist/styles.min.css" @Kit.Page.AssetAttributes()>
+<script src="@CmsContext.View.Path/dist/scripts.min.js" @Kit.Page.AssetAttributes()></script>

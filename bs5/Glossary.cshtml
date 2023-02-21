@@ -1,10 +1,11 @@
 @inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-
+@* --- This is the Bootstrap5 Edition of the Glossary --- *@
 @{
+  // Get all Terms and group them by first letter using LINQ
   var termGroups = AsList(App.Data["Term"])
-    .GroupBy(l => l.Title.Substring(0, 1).ToUpper())    // group by first letter
-    .OrderBy(s => s.Key);                               // sort asc
+    .GroupBy(l => l.Title.Substring(0, 1).ToUpper())
+    .OrderBy(s => s.Key);
 
   // Toolbar with Manage-Data-Button for the Terms
   var termToolbar = Kit.Toolbar.Default().Data("Term");
@@ -26,7 +27,7 @@
       </ul>
     </div>
   </nav>
-  @Html.Partial("./Glossary.PartTermGroups.cshtml", new { TermGroups = termGroups } )
+  @Html.Partial("Glossary.Part TermGroups.cshtml", new { TermGroups = termGroups } )
 </div>
 
-@Html.Partial("./Glossary.PartAssets.cshtml")
+@Html.Partial("Assets.cshtml")
