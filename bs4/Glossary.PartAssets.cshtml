@@ -1,6 +1,7 @@
 @inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
 
+@* When the page is ready, run glossary init JS *@
 @Kit.Page.TurnOn("window.appGlossary3.init()")
 <link rel="stylesheet" href="@App.Path/bs4/dist/styles.min.css" @Kit.Page.AssetAttributes()>
 <script src="@App.Path/bs4/dist/scripts.min.js" @Kit.Page.AssetAttributes()></script>
