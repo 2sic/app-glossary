@@ -51,7 +51,7 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
     * Updated Webpack
 * v.03.03.01 2022-08
     * Updated the lighspeed config
-* v.04.04.00 2023-02
+* v.03.04.00 2023-02
     * Replaced Tag.Custom with `Kit.HtmlTags`
     * Replaced turnOn Tag with `Kit.Page.TurnOn`
     * Removed _ from Filenames
