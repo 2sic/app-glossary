@@ -11,16 +11,16 @@ A term glossary app to use with 2sxc
 | 2sxc                | ✅    | requires 2sxc v15.03
 | Dnn                 | ✅    | For v7, v8 and v9
 | Oqtane 2            | ✅    | Requires v2.02
-| No jQuery           | ✅    | 
+| No jQuery           | ✅    |
 | Live Demo           | ➖    |
 | Install Checklist   | ✅    | See [Installation](https://azing.org/2sxc/r/JPX0Etz7) on [azing.org](https://azing.org/2sxc)
 | Source & License    | ✅    | included, ISC/MIT
 | App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/glossary3-hybrid-for-dnn-and-oqtane)
 | Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/glossary3-hybrid-for-dnn-and-oqtane)
 | Best Practices      | ✅    | Uses v13.10 conventions
-| Bootstrap 3         | ✔️    | 
+| Bootstrap 3         | ✔️    |
 | Bootstrap 4         | ✅    |
-| Bootstrap 5         | ✅    | 
+| Bootstrap 5         | ✅    |
 
 ## Installing the app
 
@@ -35,23 +35,23 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
 ## History
 
 * v.03.00 2021-10
-    * Updated to best-practices of 2sxc 12.05
-    * Hybrid, so it works with Oqtane
-    * Tested to look ok on Bootstrap5
+  * Updated to best-practices of 2sxc 12.05
+  * Hybrid, so it works with Oqtane
+  * Tested to look ok on Bootstrap5
 * v.03.01.01 2022-02
-    * Set default view
-    * Updated License
+  * Set default view
+  * Updated License
 * v.03.01.02 02022-03
-    * Enabled data-optimizations
+  * Enabled data-optimizations
 * v.03.02.00 2022-04
-    * Replaced data-enableoptimizations with IPageService.AssetAttribute()
-* v.03.03.00 2022-06 
-    * Changed all base classes to their 2sxc 14 equivalents
-    * Replaced all GetService<> with the new ServiceKit14
-    * Updated Webpack
+  * Replaced data-enableoptimizations with IPageService.AssetAttribute()
+* v.03.03.00 2022-06
+  * Changed all base classes to their 2sxc 14 equivalents
+  * Replaced all GetService<> with the new ServiceKit14
+  * Updated Webpack
 * v.03.03.01 2022-08
-    * Updated the lighspeed config
+  * Updated the lighspeed config
 * v.03.04.00 2023-02
-    * Replaced Tag.Custom with `Kit.HtmlTags`
-    * Replaced turnOn Tag with `Kit.Page.TurnOn`
-    * Removed _ from Filenames
+  * Replaced Tag.Custom with `Kit.HtmlTags`
+  * Replaced turnOn Tag with `Kit.Page.TurnOn`
+  * Removed _ from Filenames

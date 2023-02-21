@@ -17,12 +17,11 @@
   var titleAbbreviation = (Text.Has(term.Abbreviation) ? term.Abbreviation + " – " : "");
   var fullTermTitle = titleAbbreviation + term.Title;
 
-  // Set the title of the page
+  // Set the page title and description
   Kit.Page.SetTitle(fullTermTitle + " | ");  // will prepend to the existing title
-
-  // Set the description meta tag to term summary
   Kit.Page.AddMeta("description", term.summary);
 
+  // Toolbar without the Layout button
   var termToolbar = Kit.Toolbar.Default().Layout("-");
 }
 
@@ -33,7 +32,7 @@
   </p>
   <p>@Html.Raw(term.Details)</p>
   <a href='@Link.To(parameters: "#" + term.Title.Substring(0, 1))' class="btn btn-outline-primary btn-sm">
-    @Resources.Get("GoBackText")
+    @Resources.GoBackText
   </a>
 </div>
 
