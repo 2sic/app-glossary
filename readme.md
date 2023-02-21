@@ -8,7 +8,7 @@ A term glossary app to use with 2sxc
 
 | Aspect              | Status | Comments or Version |
 | ------------------- | :----: | ------------------- |
-| 2sxc                | ✅    | requires 2sxc v13.10
+| 2sxc                | ✅    | requires 2sxc v15.03
 | Dnn                 | ✅    | For v7, v8 and v9
 | Oqtane 2            | ✅    | Requires v2.02
 | No jQuery           | ✅    | 
@@ -34,20 +34,24 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
 
 ## History
 
-* v03.00 2021-10
+* v.03.00 2021-10
     * Updated to best-practices of 2sxc 12.05
     * Hybrid, so it works with Oqtane
     * Tested to look ok on Bootstrap5
-* v03.01.01 2022-02
+* v.03.01.01 2022-02
     * Set default view
     * Updated License
-* v03.01.02 02022-03
+* v.03.01.02 02022-03
     * Enabled data-optimizations
-* v03.02.00 2022-04
+* v.03.02.00 2022-04
     * Replaced data-enableoptimizations with IPageService.AssetAttribute()
-* v03.03.00 2022-06 
+* v.03.03.00 2022-06 
     * Changed all base classes to their 2sxc 14 equivalents
     * Replaced all GetService<> with the new ServiceKit14
     * Updated Webpack
-* v03.03.01 2022-08
+* v.03.03.01 2022-08
     * Updated the lighspeed config
+* v.04.04.00 2023-02
+    * Replaced Tag.Custom with `Kit.HtmlTags`
+    * Replaced turnOn Tag with `Kit.Page.TurnOn`
+    * Removed _ from Filenames
