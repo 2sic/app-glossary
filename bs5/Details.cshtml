@@ -8,7 +8,7 @@
   if(term == null) {
     <h1>@Resources.TermNotFoundTitle</h1>
     <p>@Resources.TermNotFoundText</p>
-    <a href="@Link.To()" class="btn btn-outline-primary btn-sm">@Resources.GoBackText</a>
+    <a href="@Link.To()" class="btn btn-primary btn-sm">@Resources.GoBackText</a>
     Kit.Page.SetHttpStatus(404);
     return;
   }
@@ -31,7 +31,7 @@
     <strong>@term.Summary</strong>
   </p>
   <p>@Html.Raw(term.Details)</p>
-  <a href='@Link.To(parameters: "#" + term.Title.Substring(0, 1))' class="btn btn-outline-primary btn-sm">
+  <a href='@Link.To(parameters: "#" + term.Title.Substring(0, 1))' class="btn btn-primary btn-sm">
     @Resources.GoBackText
   </a>
 </div>
