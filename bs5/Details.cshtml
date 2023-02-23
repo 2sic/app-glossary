@@ -5,7 +5,7 @@
   var term = AsList(Data).FirstOrDefault();
 
   // Show term not found notification and stop processing
-  if(term == null) {
+  if (term == null) {
     <h1>@Resources.TermNotFoundTitle</h1>
     <p>@Resources.TermNotFoundText</p>
     <a href="@Link.To()" class="btn btn-primary btn-sm">@Resources.GoBackText</a>

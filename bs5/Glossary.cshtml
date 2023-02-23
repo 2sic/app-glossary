@@ -19,7 +19,7 @@
     </button>
     <div class="navbar-collapse collapse pe-5 pe-md-0 my-2 my-md-0" id="glossary-nav-@Content.EntityId">
       <ul class="navbar-nav flex-row flex-wrap">
-        @foreach(var grp in termGroups) {
+        @foreach (var grp in termGroups) {
           <li class="nav-item">
             <a class="nav-link" href='@Tags.SafeUrl("#" + grp.Key)'>@grp.Key</a>
           </li>
