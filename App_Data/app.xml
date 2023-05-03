@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="14.09.00" ExportDate="2022-09-21T08:41:48.0489746+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="16.00.00" ExportDate="2023-05-03T11:42:49.4508178+02:00">
   <Header>
     <App Guid="0ad6f242-966e-46fa-9928-5b5a4bb41fdc" />
     <Language Default="en-us" />
@@ -9,7 +9,7 @@
     </Dimensions>
   </Header>
   <AttributeSets>
-    <AttributeSet StaticName="App-Resources" Name="App-Resources" Description="Stores resources like translations for an app" Scope="System.App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Resources" Name="App-Resources" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="GoBackText" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="0dc5760e-767b-4054-a856-efa98cf4ced6" Json="True" KeyNumber="1211">
@@ -219,10 +219,10 @@
         </Attribute>
       </Attributes>
     </AttributeSet>
-    <AttributeSet StaticName="App-Settings" Name="App-Settings" Description="Stores settings for an app" Scope="System.App" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="App-Settings" Name="App-Settings" Scope="System.App" AlwaysShareConfiguration="false">
       <Attributes />
     </AttributeSet>
-    <AttributeSet StaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" Name="Term" Description="Glossary entry" Scope="Default" AlwaysShareConfiguration="false">
+    <AttributeSet StaticName="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" Name="Term" Scope="Default" AlwaysShareConfiguration="false">
       <Attributes>
         <Attribute StaticName="Title" Type="String" IsTitle="true">
           <Entity TargetType="2" AssignmentObjectType="EAV Field Properties" AttributeSetStaticName="@All" AttributeSetName="@All" EntityGUID="eb83ac98-9a97-4cd7-a719-6c9e449de0ed" Json="True" KeyNumber="1217">
@@ -475,7 +475,7 @@
       <Value Key="RequiredOqtaneVersion" Value="03.01.00" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="14.09.00" Type="String">
+      <Value Key="RequiredVersion" Value="16.00.00" Type="String">
         <Dimension DimensionID="53" ReadOnly="false" />
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
@@ -483,7 +483,7 @@
         <Dimension DimensionID="53" ReadOnly="false" />
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="03.03.02" Type="String">
+      <Value Key="Version" Value="03.04.00" Type="String">
         <Dimension DimensionID="53" ReadOnly="false" />
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
@@ -550,7 +550,7 @@
       <Value Key="Name" Value="A-Z Liste mit A-Z Balken und Gruppierung" Type="String">
         <Dimension DimensionID="53" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="bs4/_Glossary.cshtml" Type="String">
+      <Value Key="Path" Value="bs5/Glossary.cshtml" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
       <Value Key="PresentationTypeStaticName" Value="" Type="String">
@@ -571,7 +571,7 @@
       <Value Key="Type" Value="C# Razor" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="UseForList" Value="True" Type="Boolean">
+      <Value Key="UseForList" Value="False" Type="Boolean">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
       <Value Key="ViewController" Value="" Type="String">
@@ -582,8 +582,7 @@
       </Value>
     </Entity>
     <Entity TargetType="1" AssignmentObjectType="Default" AttributeSetStaticName="2SexyContent-Template" AttributeSetName="2SexyContent-Template" EntityGUID="51393e95-26cf-49d1-b87a-f566edd78e2a" Json="True">
-      <Value Key="ContentDemoEntity" Value="6cead752-8f86-4c1c-bf9f-266ff22236d2" Type="Entity" />
-      <Value Key="ContentTypeStaticName" Value="75f85cc3-e9a5-4b7b-be8b-87971d878ef8" Type="String">
+      <Value Key="ContentTypeStaticName" Value="" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
       <Value Key="Icon" Value="" Type="Hyperlink">
@@ -607,7 +606,7 @@
       <Value Key="Name" Value="Details" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="Path" Value="bs4/_Glossary.PartTermDetails.cshtml" Type="String">
+      <Value Key="Path" Value="bs5/Details.cshtml" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
       <Value Key="Pipeline" Value="acf99993-701e-4114-8e2f-4cce6bb242fd" Type="Entity" />
@@ -665,24 +664,11 @@
       <Value Key="AllowEdit" Value="True" Type="Boolean" />
       <Value Key="Description" Value="" Type="String" />
       <Value Key="Name" Value="Term Detail" Type="String" />
-      <Value Key="Params" Value="UrlKey=[QueryString:term]" Type="String">
-        <Dimension DimensionID="52" ReadOnly="false" />
-      </Value>
-      <Value Key="StreamsOut" Value="ListContent,Default" Type="String" />
-      <Value Key="StreamWiring" Value="3f952d3b-5563-45cd-84b4-9a7e2231ef56:Default&gt;904a9dae-1c4c-4bcf-8e9b-08de32769189:Default&#xD;&#xA;3f952d3b-5563-45cd-84b4-9a7e2231ef56:Drafts&gt;904a9dae-1c4c-4bcf-8e9b-08de32769189:Drafts&#xD;&#xA;3f952d3b-5563-45cd-84b4-9a7e2231ef56:Published&gt;904a9dae-1c4c-4bcf-8e9b-08de32769189:Published&#xD;&#xA;904a9dae-1c4c-4bcf-8e9b-08de32769189:Default&gt;402027a3-4d5a-4322-be43-f8350bfac027:Default&#xD;&#xA;402027a3-4d5a-4322-be43-f8350bfac027:Default&gt;29b2c631-864e-4f9d-8625-bb631641d5e8:Default&#xD;&#xA;29b2c631-864e-4f9d-8625-bb631641d5e8:Default&gt;Out:Default" Type="String" />
+      <Value Key="Params" Value="UrlKey=[QueryString:term]" Type="String" />
+      <Value Key="StreamsOut" Value="Default,Header" Type="String" />
+      <Value Key="StreamWiring" Value="402027a3-4d5a-4322-be43-f8350bfac027:Term&gt;29b2c631-864e-4f9d-8625-bb631641d5e8:Default&#xD;&#xA;29b2c631-864e-4f9d-8625-bb631641d5e8:Default&gt;Out:Default" Type="String" />
       <Value Key="TestParameters" Value="[Params:UrlKey]=aston-martin" Type="String" />
-    </Entity>
-    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="3f952d3b-5563-45cd-84b4-9a7e2231ef56" Json="True" KeyGuid="acf99993-701e-4114-8e2f-4cce6bb242fd">
-      <Value Key="Description" Value="" Type="String" />
-      <Value Key="Name" Value="ICache" Type="String" />
-      <Value Key="PartAssemblyAndType" Value="ToSic.Eav.DataSources.IAppRoot, ToSic.Eav.DataSources" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 800,&#xD;&#xA;  &quot;Left&quot;: 440&#xD;&#xA;}" Type="String" />
-    </Entity>
-    <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="DataPipelinePart" AttributeSetName="DataPipelinePart" EntityGUID="904a9dae-1c4c-4bcf-8e9b-08de32769189" Json="True" KeyGuid="acf99993-701e-4114-8e2f-4cce6bb242fd">
-      <Value Key="Description" Value="" Type="String" />
-      <Value Key="Name" Value="PublishingFilter" Type="String" />
-      <Value Key="PartAssemblyAndType" Value="ToSic.Eav.DataSources.PublishingFilter, ToSic.Eav.DataSources" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 620,&#xD;&#xA;  &quot;Left&quot;: 440&#xD;&#xA;}" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&quot;ShowDataSourceDetails&quot;:true}" Type="String" />
     </Entity>
     <Entity TargetType="5" AssignmentObjectType="ContentType" AttributeSetStaticName="ContentType" AttributeSetName="ContentType" EntityGUID="b419b90e-3add-4561-b531-f1cb670476cc" Json="True" KeyString="75f85cc3-e9a5-4b7b-be8b-87971d878ef8">
       <Value Key="Description" Value="Glossary term" Type="String">
@@ -718,7 +704,7 @@
       <Value Key="Description" Value="" Type="String" />
       <Value Key="Name" Value="Filter: Match UrlKey" Type="String" />
       <Value Key="PartAssemblyAndType" Value="ToSic.Eav.DataSources.ValueFilter, ToSic.Eav.DataSources" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 226,&#xD;&#xA;  &quot;Left&quot;: 440&#xD;&#xA;}" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 240,&#xD;&#xA;  &quot;Left&quot;: 440&#xD;&#xA;}" Type="String" />
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="|Config ToSic.Eav.DataSources.ValueFilter" AttributeSetName="ToSic.Eav.DataSources.ValueFilter" EntityGUID="1cf9b308-93b9-4100-acf0-d63ccfd41192" Json="True" KeyGuid="29b2c631-864e-4f9d-8625-bb631641d5e8">
       <Value Key="Attribute" Value="UrlKey" Type="String">
@@ -742,7 +728,7 @@
       <Value Key="Description" Value="" Type="String" />
       <Value Key="Name" Value="App" Type="String" />
       <Value Key="PartAssemblyAndType" Value="ToSic.Eav.DataSources.App, ToSic.Eav.DataSources" Type="String" />
-      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 430,&#xD;&#xA;  &quot;Left&quot;: 440&#xD;&#xA;}" Type="String" />
+      <Value Key="VisualDesignerData" Value="{&#xD;&#xA;  &quot;Top&quot;: 480,&#xD;&#xA;  &quot;Left&quot;: 440&#xD;&#xA;}" Type="String" />
     </Entity>
     <Entity TargetType="4" AssignmentObjectType="Entity" AttributeSetStaticName="|Config ToSic.Eav.DataSources.EntityTypeFilter" AttributeSetName="ToSic.Eav.DataSources.EntityTypeFilter" EntityGUID="e30fa7d6-5919-40f7-ad11-a3c38d10d5f4" Json="True" KeyGuid="9c9db6dd-f061-447e-952b-610742150a5e">
       <Value Key="TypeName" Value="Term" Type="String">
@@ -821,10 +807,10 @@
       <Value Key="DurationUsers" Value="-1" Type="Number">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="IsEnabled" Value="True" Type="Boolean">
+      <Value Key="IsEnabled" Value="False" Type="Boolean">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
-      <Value Key="Title" Value="✅ - Users 14400s, Reg 🚫, Editors 300s, SysAdmins 300s" Type="String">
+      <Value Key="Title" Value="🚫" Type="String">
         <Dimension DimensionID="52" ReadOnly="false" />
       </Value>
       <Value Key="UrlParametersCaseSensitive" Value="False" Type="Boolean">
