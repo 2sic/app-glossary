@@ -1,10 +1,15 @@
 @inherits Custom.Hybrid.Razor14
 @using ToSic.Razor.Blade;
-
+@* --- This is the Bootstrap5 Edition of the Details --- *@
+@* --- Is is also used by Bootstrap3 and Bootstrap4  --- *@
 @{
-  var term = AsList(Data).FirstOrDefault();
+  // helper with some shared logic
+  var logic = CreateInstance("../shared/Logic.cs");
 
-  // Show term not found notification and stop processing
+  // Get the term from Data (the Query of this view)
+  var term = AsTyped(Data);
+
+  // If term not found, show 404 and stop processing
   if (term == null) {
     <h1>@Resources.TermNotFoundTitle</h1>
     <p>@Resources.TermNotFoundText</p>
@@ -14,24 +19,28 @@
   }
 
   // Appends " – " to abbreviation if exists
-  var titleAbbreviation = (Text.Has(term.Abbreviation) ? term.Abbreviation + " – " : "");
-  var fullTermTitle = titleAbbreviation + term.Title;
+  var title = logic.TitleWithAbbreviation(term);
 
   // Set the page title and description
-  Kit.Page.SetTitle(fullTermTitle + " | ");  // will prepend to the existing title
-  Kit.Page.AddMeta("description", term.summary);
+  Kit.Page.SetTitle(title + " | ");  // will prepend to the existing title
+  Kit.Page.AddMeta("description", term.String("Summary"));
 
   // Toolbar without the Layout button
   var termToolbar = Kit.Toolbar.Default().Layout("-");
 }
 
 <div @termToolbar.For(term)>
-  <h1>@fullTermTitle</h1>
+  @* Show the term title and summary *@
+  <h1>@title</h1>
   <p>
-    <strong>@term.Summary</strong>
+    <strong>@term.String("Summary")</strong>
   </p>
-  <p>@Html.Raw(term.Details)</p>
-  <a href='@Link.To(parameters: "#" + term.Title.Substring(0, 1))' class="btn btn-primary btn-sm">
+
+  @* Show Details *@
+  @term.Html("Details")
+
+  @* Link back, going to the starting letter in the alphabet (add an "-" in case empty) *@
+  <a href='@Link.To(parameters: "#" + logic.FirstCharOrDash(term.String("Title")))' class="btn btn-primary btn-sm">
     @Resources.GoBackText
   </a>
 </div>

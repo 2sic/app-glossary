@@ -1,11 +1,16 @@
 @inherits Custom.Hybrid.Razor14
+@using System.Collections.Generic;
+@using System.Linq;
 @using ToSic.Razor.Blade;
+@using ToSic.Sxc.Data;
 @* --- This is the Bootstrap5 Edition of the Glossary --- *@
+@* --- Is is also used by Bootstrap4                  --- *@
 @{
-  // Get all Terms and group them by first letter using LINQ
-  var termGroups = AsList(App.Data["Term"])
-    .GroupBy(l => l.Title.Substring(0, 1).ToUpper())
-    .OrderBy(s => s.Key);
+  // helper with some shared logic
+  var logic = CreateInstance("../shared/Logic.cs");
+
+  // Get all Terms and group them by first letter - result is typed here, to help compiler
+  var termGroups = logic.TermsGroupedByFirstCharacter() as List<IGrouping<string, ITypedItem>>;
 
   // Toolbar with Manage-Data-Button for the Terms
   var termToolbar = Kit.Toolbar.Default().Data("Term");
@@ -13,6 +18,7 @@
 
 <div class="app-glossary3" @termToolbar>
   <nav class="navbar navbar-expand-md navbar-light px-0 py-1 py-md-0">
+    @* d-block d-md-none : only mobile visible *@
     <span class="navbar-brand d-block d-md-none fw-bold">@Resources.GlossaryMenu</span>
     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#glossary-nav-@Content.EntityId" data-bs-target="#glossary-nav-@Content.EntityId" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
@@ -27,7 +33,7 @@
       </ul>
     </div>
   </nav>
-  @Html.Partial("Glossary.Part TermGroups.cshtml", new { TermGroups = termGroups } )
+  @Html.Partial("Glossary.Part TermGroups.cshtml", new { termGroups } )
 </div>
 
 @Html.Partial("Assets.cshtml")
