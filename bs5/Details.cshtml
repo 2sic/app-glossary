@@ -1,19 +1,19 @@
-@inherits Custom.Hybrid.Razor14
+@inherits Custom.Hybrid.RazorPro
 @using ToSic.Razor.Blade;
 @* --- This is the Bootstrap5 Edition of the Details --- *@
 @* --- Is is also used by Bootstrap3 and Bootstrap4  --- *@
 @{
   // helper with some shared logic
-  var logic = CreateInstance("../shared/Logic.cs");
+  var logic = GetCode("../shared/Logic.cs");
 
   // Get the term from Data (the Query of this view)
-  var term = AsTyped(Data);
+  var term = AsItem(MyData);
 
   // If term not found, show 404 and stop processing
   if (term == null) {
-    <h1>@Resources.TermNotFoundTitle</h1>
-    <p>@Resources.TermNotFoundText</p>
-    <a href="@Link.To()" class="btn btn-primary btn-sm">@Resources.GoBackText</a>
+    <h1>@App.Resources.String("TermNotFoundTitle")</h1>
+    <p>@App.Resources.String("TermNotFoundText")</p>
+    <a href="@Link.To()" class="btn btn-primary btn-sm">@App.Resources.String("GoBackText")</a>
     Kit.Page.SetHttpStatus(404);
     return;
   }
@@ -41,7 +41,7 @@
 
   @* Link back, going to the starting letter in the alphabet (add an "-" in case empty) *@
   <a href='@Link.To(parameters: "#" + logic.FirstCharOrDash(term.String("Title")))' class="btn btn-primary btn-sm">
-    @Resources.GoBackText
+    @App.Resources.String("GoBackText")
   </a>
 </div>
 

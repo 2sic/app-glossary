@@ -8,9 +8,9 @@ A term glossary app to use with 2sxc
 
 | Aspect              | Status | Comments or Version |
 | ------------------- | :----: | ------------------- |
-| 2sxc                | ✅    | requires 2sxc v16.01
-| Dnn                 | ✅    | For v9
-| Oqtane 2            | ✅    | Requires v3.04
+| 2sxc                | ✅    | requires 2sxc v16.02
+| Dnn                 | ✅    | For v9.6.1+
+| Oqtane 2            | ✅    | Requires v3.04+
 | No jQuery           | ✅    |
 | Live Demo           | ➖    |
 | Install Checklist   | ✅    | See [Installation](https://azing.org/2sxc/r/JPX0Etz7) on [azing.org](https://azing.org/2sxc)
@@ -61,3 +61,6 @@ If you want to customize the CSS, you will usually follow the ["Create Custom St
   * Changed to required 2sxc 16.01 for typed objects
   * Changed all code to be strictly typed
   * extracted some logic to `logic.cs`
+* v03.06.00 2023-07
+  * 2sxc 16.02 coding conventions
+  * everything typed

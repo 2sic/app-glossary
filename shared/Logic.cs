@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using ToSic.Razor.Blade;
 using ToSic.Sxc.Data;
 
-public class Logic: Custom.Hybrid.Code14
+public class Logic: Custom.Hybrid.CodePro
 {
   public string FirstCharOrDash(string original)
   {
@@ -12,7 +12,7 @@ public class Logic: Custom.Hybrid.Code14
 
   public List<IGrouping<string, ITypedItem>> TermsGroupedByFirstCharacter()
   {
-    return AsTypedList(App.Data["Term"])
+    return AsItems(App.Data["Term"])
       .GroupBy(l => FirstCharOrDash(l.String("Title")))
       .OrderBy(s => s.Key)
       .ToList();
