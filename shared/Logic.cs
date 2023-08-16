@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using ToSic.Razor.Blade;
 using ToSic.Sxc.Data;
 
-public class Logic: Custom.Hybrid.CodePro
+public class Logic: Custom.Hybrid.CodeTyped
 {
   public string FirstCharOrDash(string original)
   {
