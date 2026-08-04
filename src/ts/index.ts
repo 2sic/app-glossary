@@ -7,14 +7,19 @@ function initGloassary3() {
   var nav = document.getElementsByTagName('header')[0];
   var navHeight = (nav != null ? nav.offsetHeight : 0);
 
-  document.querySelectorAll('.app-glossary3 a[href*="#"]:not([href="#"])').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      
-      window.location.hash = this.getAttribute('href');
+  document.querySelectorAll<HTMLAnchorElement>('.app-glossary3 a[href*="#"]:not([href="#"])').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const href = anchor.getAttribute('href');
+      if (!href) return;
 
-      // substract scrollOffset with navHeight for accurate position 
-      const elemOffsetY = document.querySelector(this.getAttribute('href')).getBoundingClientRect().top + window.scrollY - navHeight;
+      e.preventDefault();
+      window.location.hash = href;
+
+      const target = document.querySelector<HTMLElement>(href);
+      if (!target) return;
+
+      // substract scrollOffset with navHeight for accurate position
+      const elemOffsetY = target.getBoundingClientRect().top + window.scrollY - navHeight;
       // scroll to hash element
       window.scrollTo({
         top: elemOffsetY,
@@ -26,13 +31,16 @@ function initGloassary3() {
 
   // get hash from url and open specific item
   if (window.location.hash) {
-    // substract scrollOffset with navHeight for accurate position 
-    const elemOffsetY = document.querySelector(window.location.hash).getBoundingClientRect().top + window.scrollY - navHeight;
-    // scroll to hash element
-    window.scrollTo({
-      top: elemOffsetY,
-      left: 0,
-      behavior: 'smooth'
-    });
+    const target = document.querySelector<HTMLElement>(window.location.hash);
+    if (target) {
+      // substract scrollOffset with navHeight for accurate position
+      const elemOffsetY = target.getBoundingClientRect().top + window.scrollY - navHeight;
+      // scroll to hash element
+      window.scrollTo({
+        top: elemOffsetY,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
   }
 }
