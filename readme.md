@@ -18,8 +18,8 @@ A term glossary app to use with 2sxc
 | App Catalog         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/glossary3-hybrid-for-dnn-and-oqtane)
 | Screenshots         | ✅    | See [app catalog](https://2sxc.org/en/apps/app/glossary3-hybrid-for-dnn-and-oqtane)
 | Best Practices      | ✅    | Uses v16.01 conventions
-| Bootstrap 3         | ✔️    |
-| Bootstrap 4         | ✅    |
+| Bootstrap 3         | ❌    | Last supported in v03.21.01
+| Bootstrap 4         | ❌    | Last supported in v03.21.01
 | Bootstrap 5         | ✅    |
 
 ## Installing the app
@@ -33,6 +33,10 @@ The Glossary App has no app settings but some app resources you can change.
 If you want to customize the CSS, you will usually follow the ["Create Custom Styles in a Standard 2sxc App" checklist](https://azing.org/2sxc/r/gg_aB9FD)
 
 ## History
+
+* v03.21.02 2026-10
+  * Removed Bootstrap 3 and Bootstrap 4 support; the app is now Bootstrap 5 only
+  * For Bootstrap 3 or Bootstrap 4, use v03.21.01
 
 * v.03.00 2021-10
   * Updated to best-practices of 2sxc 12.05
